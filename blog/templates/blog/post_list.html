@@ -1,0 +1,12 @@
+<h1>Listado de posts</h1>
+<ul>
+{% for post in posts %}
+<li>
+<a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+<br>
+<small>{{ post.created_at|date:"d/m/Y H:i" }}</small>
+</li>
+{% empty %}
+<li>No hay publicaciones disponibles.</li>
+{% endfor %}
+</ul>
